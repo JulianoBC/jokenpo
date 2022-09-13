@@ -25,11 +25,12 @@ function win(a, b) {
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    const smallUserWord = 'user'.fontsize(3).sup();
-    const smallCompWord = 'comp'.fontsize(3).sup();
+    const userChoice_div = document.getElementById(a);
+    const smallUserWord = 'user'.fontsize(8).sup();
+    const smallCompWord = 'comp'.fontsize(4).sup();
     result_p.innerHTML = `<p>${convertToWord(a)}${smallUserWord} ganha de ${convertToWord(b)}${smallCompWord} . Você ganhou...!🔥</p>`
-    document.getElementById(a).classList.add('green-back')
-    setTimeout(function(){document.getElementById(a).classList.remove('green-back')}, 1000);
+    userChoice_div.classList.add('green-back')
+    setTimeout(() => userChoice_div.classList.remove('green-back'), 1000);
     
 }
 
@@ -37,20 +38,22 @@ function lose(a, b) {
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
+    const userChoice_div = document.getElementById(a);
     const smallUserWord = "user".fontsize(3).sup();
-    const smallCompWord = "comp".fontsize(3).sup();
+    const smallCompWord = "comp".fontsize(8).sup();
     result_p.innerHTML = `<p>${convertToWord(a)}${smallUserWord} perde para ${convertToWord(b)}${smallCompWord} . Você perdeu...!💩</p>`
-    document.getElementById(a).classList.add('red-back')
-    setTimeout(function(){document.getElementById(a).classList.remove('red-back')}, 1000)
+    userChoice_div.classList.add('red-back')
+    setTimeout(() => userChoice_div.classList.remove('red-back'), 1000)
 
 }
 
 function draw(a, b) {
 	const smallUserWord = "user".fontsize(3).sup();
     const smallCompWord = "comp".fontsize(3).sup();
+    const userChoice_div = document.getElementById(a);
     result_p.innerHTML = `<p>${convertToWord(a)}${smallUserWord} empata com ${convertToWord(b)}${smallCompWord} . Você empatou...!🍌</p>`
-    document.getElementById(a).classList.add('draw-back')
-    setTimeout(function(){document.getElementById(a).classList.remove('draw-back')}, 1000)
+    userChoice_div.classList.add('draw-back')
+    setTimeout(() => userChoice_div.classList.remove('draw-back'), 1000)
 
 }
 
